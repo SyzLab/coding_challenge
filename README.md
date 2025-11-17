@@ -1,5 +1,5 @@
 # Interview Quest
-November of 2025
+November 2025
 
 A Django boilerplate for technical interviews - clone, code, and showcase your skills
 
@@ -14,8 +14,8 @@ A Django boilerplate for technical interviews - clone, code, and showcase your s
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/SyzLab/interview-quest.git
-cd interview-quest
+git clone https://github.com/SyzLab/interview_quest.git
+cd interview_quest
 ```
 
 ### 2. Create a Virtual Environment
@@ -37,26 +37,19 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 4. Set Up Environment Variables
-
-```bash
-# Copy the example environment file
-cp .env.example .env
-```
-
-### 5. Run Migrations
+### 4. Run Migrations
 
 ```bash
 python manage.py migrate
 ```
 
-### 6. Create a Superuser (Optional)
+### 5. Create a Superuser
 
 ```bash
 python manage.py createsuperuser
 ```
 
-### 7. Start the Development Server
+### 6. Start the Development Server
 
 ```bash
 python manage.py runserver
