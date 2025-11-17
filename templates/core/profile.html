@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile - {{ user.username }}{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <h1 class="heading-primary mb-3">User Profile</h1>
+
+        <div class="grid-2">
+            <div>
+                <h2 class="section-title">
+                    Basic Information
+                </h2>
+
+                <div class="field">
+                    <strong class="field-label">Username:</strong>
+                    <p class="field-value">{{ user.username }}</p>
+                </div>
+
+                <div class="field">
+                    <strong class="field-label">Email:</strong>
+                    <p class="field-value">{{ user.email|default:"Not provided" }}</p>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="section-title">
+                    Account Details
+                </h2>
+
+                <div class="field">
+                    <strong class="field-label">Date Joined:</strong>
+                    <p class="field-value">{{ user.date_joined|date:"F d, Y" }}</p>
+                </div>
+
+                <div class="field">
+                    <strong class="field-label">Last Login:</strong>
+                    <p class="field-value">
+                        {% if user.last_login %}
+                            {{ user.last_login|date:"F d, Y g:i A" }}
+                        {% else %}
+                            Never
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-row">
+            <a href="{% url 'core:home' %}" class="btn btn-secondary">Back to Home</a>
+            <a href="/admin/" class="btn">Django Admin</a>
+        </div>
+    </div>
+{% endblock %}

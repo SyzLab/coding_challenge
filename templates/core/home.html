@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Interview Quest{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <h1 class="heading-primary">Welcome to Interview Quest!</h1>
+
+        {% if user.is_authenticated %}
+            <p>
+                Hello, <strong>{{ user.get_full_name|default:user.username }}</strong>!
+                You're all set up and ready to go.
+            </p>
+            <p class="mb-2">
+                The project is running successfully. Check out your
+                <a href="{% url 'core:profile' %}" class="link-primary">profile page</a>
+                to see your user details.
+            </p>
+        {% else %}
+            <p>
+                Everything is set up correctly!
+            </p>
+            <p class="mb-2">
+                To test the authentication, you can:
+            </p>
+            <ul class="list-spaced">
+                <li>
+                    Create a superuser:
+                    <code class="code-inline">python manage.py createsuperuser</code>
+                </li>
+                <li>
+                    Then <a href="{% url 'admin:login' %}" class="link-primary">login here</a>
+                </li>
+            </ul>
+        {% endif %}
+
+        <hr class="divider">
+
+        <h2 class="heading-secondary">Quick Start Guide</h2>
+        <div class="quick-start-box">
+            <ol class="quick-start-list">
+                <li class="quick-start-item">Read the challenge requirements carefully</li>
+                <li class="quick-start-item">Start by writing tests for your features</li>
+                <li class="quick-start-item">Build your models, views, and templates</li>
+                <li class="quick-start-item">
+                    Run tests frequently:
+                    <code class="code-inline">pytest</code>
+                </li>
+                <li>Commit your changes as you progress</li>
+            </ol>
+        </div>
+
+        <div class="btn-group">
+            <a href="/admin/" class="btn">Django Admin</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'core:profile' %}" class="btn">View Profile</a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
