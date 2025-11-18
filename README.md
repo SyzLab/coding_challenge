@@ -43,16 +43,19 @@ pip install -r requirements.txt
 python manage.py migrate
 ```
 
-### 5. Create a Superuser
+### 5. Install fixtures
 
 ```bash
-python manage.py createsuperuser
+python manage.py loaddata fixtures/users.json
 ```
 
 ### 6. Start the Development Server
 
 ```bash
 python manage.py runserver
+# Visit http://127.0.0.1:8000/ to see the app running!
 ```
 
-Visit `http://127.0.0.1:8000/` to see the app running!
+### 7. Log in
+
+You can use any user from the fixtures e.g. `syzlab`. Their passwords are all `djangoforlife`.
