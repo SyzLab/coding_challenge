@@ -66,4 +66,4 @@ You can use any user from the fixtures e.g. `syzlab`. Their passwords are all `d
 
 ---
 
-Recibirás los detalles exactos del desafío durante tu entrevista.
+You will receive the exact details of the challenge in your interview.
