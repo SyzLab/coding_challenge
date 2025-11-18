@@ -63,3 +63,7 @@ python manage.py runserver
 ### 8. Log in
 
 You can use any user from the fixtures e.g. `syzlab`. Their passwords are all `djangoforlife`.
+
+---
+
+Recibirás los detalles exactos del desafío durante tu entrevista.
