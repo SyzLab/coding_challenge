@@ -1,4 +1,4 @@
-# Interview Quest
+# Coding Challenge
 November 2025
 
 A Django boilerplate for technical interviews - clone, code, and showcase your skills
@@ -14,8 +14,8 @@ A Django boilerplate for technical interviews - clone, code, and showcase your s
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/SyzLab/interview_quest.git
-cd interview_quest
+git clone https://github.com/SyzLab/coding_challenge.git
+cd coding_challenge
 ```
 
 ### 2. Create a Virtual Environment

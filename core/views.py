@@ -1,5 +1,7 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+
+from core.models import User
 
 
 def home(request):
@@ -11,11 +13,25 @@ def home(request):
 
 
 @login_required
-def profile(request):
+def profile(request, username):
     """
     User profile view - requires authentication.
-    Displays the logged-in user's information.
+    Displays any user's information based on the username parameter.
     """
+    user = get_object_or_404(User, username=username)
     return render(request, 'core/profile.html', {
-        'user': request.user
+        'user': user,
+        'is_own_profile': request.user.username == username
+    })
+
+
+@login_required
+def profiles(request):
+    """
+    Profiles list view - requires authentication.
+    Displays a list of all users.
+    """
+    users = User.objects.all().order_by('username')
+    return render(request, 'core/profiles.html', {
+        'users': users
     })

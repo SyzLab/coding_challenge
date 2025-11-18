@@ -1,5 +1,5 @@
 """
-WSGI config for interview_quest project.
+WSGI config for coding_challenge project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'interview_quest.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'coding_challenge.settings')
 
 application = get_wsgi_application()

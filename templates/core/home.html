@@ -1,20 +1,15 @@
 {% extends 'base.html' %}
 
-{% block title %}Home - Interview Quest{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block content %}
     <div class="card">
-        <h1 class="heading-primary">Welcome to Interview Quest!</h1>
+        <h1 class="heading-primary">Welcome to Coding Challenge!</h1>
 
         {% if user.is_authenticated %}
             <p>
-                Hello, <strong>{{ user.username|capfirst }}</strong>!
+                Hello, <strong>{{ user.first_name|default:user.username }}</strong>!
                 You're all set up and ready to go.
-            </p>
-            <p class="mb-2">
-                Check out your
-                <a href="{% url 'core:profile' %}" class="link-primary">profile page</a>
-                to see your user details.
             </p>
         {% else %}
             <p>
@@ -33,5 +28,20 @@
                 </li>
             </ul>
         {% endif %}
+
+        <hr class="divider">
+
+        <h2 class="heading-secondary">Things to know</h2>
+        <div class="quick-start-box">
+            <ol class="quick-start-list">
+                <li class="quick-start-item">You have 30 minutes to work.</li>
+                <li class="quick-start-item">You can - and should - use AI.</li>
+                <li class="quick-start-item">You can consult with us during your coding challenge.</li>
+                <li class="quick-start-item">Focus on good structure and clean code.</li>
+                <li class="quick-start-item">You don't have to finish the project, you can even leave errors.</li>
+                <li class="quick-start-item">After coding, you'll have time to explain your thought process.</li>
+            </ol>
+        </div>
+        <p class="small mt-2">You will receive the exact details of the challenge in your interview.</p>
     </div>
 {% endblock %}

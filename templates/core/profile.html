@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
 
-{% block title %}Profile - {{ user.username }}{% endblock %}
+{% block title %}Profile · {{ user.username }}{% endblock %}
 
 {% block content %}
     <div class="card">
-        <h1 class="heading-primary mb-3">User Profile</h1>
+        <h1 class="heading-primary mb-3">
+            User Profile
+            {% if is_own_profile %}
+                <span style="color: #666; font-size: 0.7em;">(You)</span>
+            {% endif %}
+        </h1>
 
         <div class="grid-2">
             <div>
@@ -15,6 +20,11 @@
                 <div class="field">
                     <strong class="field-label">Username:</strong>
                     <p class="field-value">{{ user.username }}</p>
+                </div>
+
+                <div class="field">
+                    <strong class="field-label">First name:</strong>
+                    <p class="field-value">{{ user.first_name|default:"Not provided" }}</p>
                 </div>
 
                 <div class="field">
@@ -47,7 +57,7 @@
         </div>
 
         <div class="btn-row">
-            <a href="{% url 'core:home' %}" class="btn btn-primary">Back to Home</a>
+            <a href="{% url 'core:profiles' %}" class="btn btn-primary">Back to Profiles</a>
         </div>
     </div>
 {% endblock %}
