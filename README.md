@@ -11,14 +11,18 @@ A Django boilerplate for technical interviews - clone, code, and showcase your s
 
 ## Quick Start
 
-### 1. Clone the Repository
+### 1. Make a Fork of the Repository
+
+Go to `https://github.com/SyzLab/coding_challenge` and select the Fork option.
+
+### 2. Clone the Repository
 
 ```bash
-git clone https://github.com/SyzLab/coding_challenge.git
+git clone https://github.com/<your-username>/coding_challenge.git
 cd coding_challenge
 ```
 
-### 2. Create a Virtual Environment
+### 3. Create a Virtual Environment
 
 ```bash
 # Create virtual environment
@@ -31,31 +35,31 @@ source venv/bin/activate
 venv\Scripts\activate
 ```
 
-### 3. Install Dependencies
+### 4. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run Migrations
+### 5. Run Migrations
 
 ```bash
 python manage.py migrate
 ```
 
-### 5. Install fixtures
+### 6. Install fixtures
 
 ```bash
 python manage.py loaddata fixtures/users.json
 ```
 
-### 6. Start the Development Server
+### 7. Start the Development Server
 
 ```bash
 python manage.py runserver
 # Visit http://127.0.0.1:8000/ to see the app running!
 ```
 
-### 7. Log in
+### 8. Log in
 
 You can use any user from the fixtures e.g. `syzlab`. Their passwords are all `djangoforlife`.
